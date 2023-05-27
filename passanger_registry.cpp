@@ -21,7 +21,7 @@ cout<<"\tWelcome To Our Ticket Service\n";
 
   
     cout << "\tDear Customer Here is Your Ticket\n";
-    cout << "Your Full Name......\t\t" << passanger_1.firstName + passanger_1.lastName);
+    cout << "Your Full Name......\t\t" << passanger_1.firstName + passanger_1.lastName;
     cout << "\nYour phone number...........\t" <<passanger_1.phoneNumber;
     cout << "\nYour email adress.......\t" <<passanger_1.emailAdress;
     
