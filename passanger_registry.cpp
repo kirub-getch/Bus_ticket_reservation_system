@@ -20,6 +20,8 @@ void travel_destinations(destinations *passanger)
       passanger->distance = destinationRecord[i].distance;
       passanger->direction = destinationRecord[i].direction;
     }
+    else 
+    cout<<"please enter the city's name correctly , dont forget to start with a capital letter"
   }
 }
 
@@ -49,7 +51,7 @@ travel_destinations(ptr);
          cout << "\nYour phone number...........\t" <<passanger_1.phoneNumber;
         cout << "\nYour email adress.......\t" <<passanger_1.emailAdress;*/
 
-cout << "Your arrival city......\t\t" << passanger[0].city;
+cout << "Your arrival city......\t" << passanger[0].city;
 cout << "\n distance from cemtral city...........\t" << passanger[0].distance;
 cout << "\ndirection from the central city.......\t" << passanger[0].direction;
 
