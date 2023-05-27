@@ -33,7 +33,7 @@ struct passanger_detail
     
 };
 
-destinations travel_destinations(destinations *passanger);
+void travel_destinations(destinations *passanger);
 
 destinations destinationRecord[10] ={{"Bahirdar", 497 ,north},
                                     {"Gondar", 663, north },

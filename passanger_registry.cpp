@@ -5,7 +5,7 @@
 
 using namespace std ;
 
-destinations travel_destinations(destinations *passanger)
+void travel_destinations(destinations *passanger)
 {
   string arrival;
 
@@ -30,7 +30,7 @@ cout<<"\tWelcome To Our Ticket Service\n";
 
 destinations passanger[10];
 
-destination*  ;
+destinations *ptr;
 ptr = &passanger[0];
 
 travel_destinations(ptr);
