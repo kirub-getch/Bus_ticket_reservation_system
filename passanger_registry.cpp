@@ -18,7 +18,7 @@ ptr = &passanger[0];
 
 travel_destinations(ptr);
 
-    /* passanger_detail passanger_1;
+/* passanger_detail passanger_1;
 
         passanger_1.firstName = "kirub";
         passanger_1.lastName = "getch";
@@ -37,5 +37,5 @@ cout << "\n distance from cemtral city...........\t" << passanger[0].distance;
 cout << "\ndirection from the central city.......\t" << passanger[0].direction;
 
 
-    return 0;
+return 0;
 }
