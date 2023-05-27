@@ -19,7 +19,7 @@ void travel_destinations(destinations *passanger)
             passanger->distance = destinationRecord[i].distance;
             passanger->direction = destinationRecord[i].direction;
         }
-        else if (i == 9 && destinationRecord[i].city != arrival)
+        else if (i == 9 && (destinationRecord[i].city != arrival))
         {
             cout << "please enter the city's name correctly , dont forget to start with a capital letter\n";
             break;
