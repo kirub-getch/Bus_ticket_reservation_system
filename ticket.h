@@ -17,9 +17,9 @@ struct destinations
 {
     string city;
     //destination or arrival city
-   const int distance;
+   int distance;
     //distance in km from the selected city to the capital city
-   const int direction;
+   int direction;
     //direction of the selected city from the capital city
 };
 
