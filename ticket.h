@@ -1,4 +1,4 @@
-/*#pragma once*/
+#pragma once
 #include <iostream>
 #include <string.h>
 #include <stdlib.h>
@@ -33,5 +33,7 @@ struct passanger_detail
 };
 
 extern destinations destinationRecord[];
+
+
 
 void travel_destinations(destinations *passanger);

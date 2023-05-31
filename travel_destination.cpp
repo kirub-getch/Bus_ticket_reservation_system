@@ -1,10 +1,10 @@
 #include <iostream>
 #include <string>
-//#include "ticket.h"
+#include "ticket.h"
 
 using namespace std;
 
-const destinations destinationRecord[10] ={{"Bahirdar", 497 ,north},
+destinations destinationRecord[10] ={{"Bahirdar", 497 ,north},
                                     {"Gondar", 663, north },
                                     {"Hawassa", 285, south },
                                     {"Dire Dawa", 510,east},

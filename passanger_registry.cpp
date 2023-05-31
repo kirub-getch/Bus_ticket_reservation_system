@@ -5,7 +5,7 @@
 
 using namespace std ;
 
-void travel_destinations(destinations *passanger)
+/*void travel_destinations(destinations *passanger)
 {
   string arrival;
 
@@ -27,7 +27,7 @@ void travel_destinations(destinations *passanger)
     }
   }
 }
-
+*/
 
 int main()
 {
