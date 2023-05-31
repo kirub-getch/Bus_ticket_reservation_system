@@ -43,7 +43,7 @@ travel_destinations(ptr);
 
 
 
-cout << "Your arrival city......\t" << passanger[0].city;
+cout << "\nYour arrival city......\t" << passanger[0].city;
 cout << "\n distance from cemtral city...........\t" << passanger[0].distance;
 cout << "\ndirection from the central city.......\t" << passanger[0].direction;
 

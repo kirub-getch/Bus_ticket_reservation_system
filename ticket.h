@@ -32,8 +32,9 @@ struct passanger_detail
     
 };
 
-extern destinations destinationRecord[];
-
-
-
 void travel_destinations(destinations *passanger);
+
+extern destinations destinationRecord[10];
+
+
+
