@@ -28,13 +28,19 @@ struct passanger_detail
     string firstName;
     string lastName;
     string phoneNumber;
-    string emailAdress;
-    
+    string emailAddress;
+    string city;
+    // destination or arrival city
+    int distance;
+    // distance in km from the selected city to the capital city
+    int direction;
+    // direction of the selected city from the capital city
 };
 
-void travel_destinations(destinations *passanger);
+void travel_destinations(destinations *);
 
-extern destinations destinationRecord[10];
+void take_in_detail(passanger_detail *);
 
+void display_detail(passanger_detail * );
 
-
+    extern destinations destinationRecord[10];

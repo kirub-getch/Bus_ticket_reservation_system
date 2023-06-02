@@ -11,14 +11,12 @@ void travel_destinations(destinations *passanger)
     string arrival;
     int trial = 0;
 
- 
+       cout << "please enter your arival city :";
+       getline(cin, arrival);
 
     for (int i = 0; i < 10; i++)
     {
     
-       cout << "please enter your arival city :";
-       getline(cin, arrival);
-
         if (destinationRecord[i].city == arrival)
         {
             passanger->city = destinationRecord[i].city;
@@ -30,17 +28,17 @@ void travel_destinations(destinations *passanger)
         else if (i == 9 && (destinationRecord[i].city != arrival))
         {
            cout << "please enter the city's name correctly , dont forget to start with a capital letter\n";
-
-          /* trial ++;
-           i = 0;
-
-           if (trial == 3)
+           //break out of the loop if the person after 3 wrong trials
+           if (trial == 2)
            {
             cout<<"please try again later" << endl;
-               break;
-           }*/
-              
-           
+            break;   }
+        
+            cout << "please enter your arival city :";
+            getline(cin, arrival);  
+           // resting the loop so that it takes input again
+            trial++;
+            i = 0;
         }
     }
 }
