@@ -6,10 +6,11 @@ using namespace std;
 
 void display_detail(passanger_detail *p)
 {
-   cout<<"Name: "<<p->firstName + " " + p->lastName <<"\n";
+cout<<"here is your ticket\n";
+   cout<<"\n Name: "<<p->firstName + " " + p->lastName <<"\n";
    cout<<"phone_number: "<< p->phoneNumber <<"\n";
    cout<<"emailAddress: "<< p->emailAddress <<"\n";
 
-   cout << "destinations from " << p->city << "Addis Abeba\n";
+   cout << "destinations from " << p->city << " To Addis Abeba\n";
    
 }

@@ -37,7 +37,7 @@ struct passanger_detail
     // direction of the selected city from the capital city
 };
 
-void travel_destinations(destinations *);
+void travel_destinations(passanger_detail *);
 
 void take_in_detail(passanger_detail *);
 

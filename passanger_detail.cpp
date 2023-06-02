@@ -6,7 +6,7 @@ using namespace std;
 
 void take_in_detail(passanger_detail *detail)
 {
-    cout<<"please enter your name"<<endl;
+    cout<<"please enter your firstname"<<endl;
     getline(cin ,detail->firstName);
     
     cout<<"please enter your last name"<<endl;

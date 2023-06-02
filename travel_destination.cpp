@@ -6,7 +6,7 @@ using namespace std;
 
 
 
-void travel_destinations(destinations *passanger)
+void travel_destinations(passanger_detail *passanger)
 {
     string arrival;
     int trial = 0;
