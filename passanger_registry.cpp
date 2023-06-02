@@ -9,9 +9,9 @@ using namespace std ;
 int main()
 {
   
-cout<<"\tWelcome To Our Ticket Service\n Please note that currently only tickets from regoinal cities to Addis Abeba  are available \n";
-
 static passanger_detail passanger[10];
+
+cout<<"\tWelcome To Our Ticket Service\n Please note that currently only tickets from regoinal cities to Addis Abeba  are available \n";
 
 passanger_detail *ptr;
 
