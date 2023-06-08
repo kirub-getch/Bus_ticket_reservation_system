@@ -6,10 +6,15 @@ using namespace std;
 
 void take_in_detail(passanger_detail *detail)
 {
-    cout<<"please enter your firstname :";
+    cout<<"please fill in the details of the passanger"<<endl;
+
+   // cout<<"enter firstname:";
     getline(cin ,detail->firstName);
     
-    cout<<"\nplease enter your last name:";
+    cout<<"enter first name:";
+    getline(cin ,detail->firstName);
+
+     cout<<"enter last name:";
     getline(cin ,detail->lastName);
     
     detail->emailAddress = getEmailAddress();

@@ -21,8 +21,9 @@ travel_destinations(ptr);
 
 cout<<"would you like to procced to passanger registration? (Y/N)\n";
 cin>>answer;
+
 if(answer == 'n' || answer == 'N')
-return 1;
+   {return 1;}
 
 take_in_detail(ptr);
 
