@@ -15,7 +15,7 @@ void travel_destinations(passanger_detail *passanger)
        getline(cin, arrival);
 
     for (int i = 0; i < 10; i++)
-    {
+    { 
     
         if (destinationRecord[i].city == arrival)
         {

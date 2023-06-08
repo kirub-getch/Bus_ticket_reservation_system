@@ -66,4 +66,4 @@ cleanw:
 # Cleans only all files with the extension .d
 .PHONY: cleandepw
 cleandepw:
-	$(DEL) $(DEP)
+	$(DEL) $(DEP)  

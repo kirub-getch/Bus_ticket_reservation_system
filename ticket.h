@@ -37,10 +37,14 @@ struct passanger_detail
     // direction of the selected city from the capital city
 };
 
+string getEmailAddress();
+
+string getPhoneNumber();
+
 void travel_destinations(passanger_detail *);
 
 void take_in_detail(passanger_detail *);
 
 void display_detail(passanger_detail * );
 
-    extern destinations destinationRecord[10];
+extern destinations destinationRecord[10];

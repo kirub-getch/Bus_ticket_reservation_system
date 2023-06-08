@@ -13,9 +13,9 @@ void take_in_detail(passanger_detail *detail)
     getline(cin ,detail->lastName);
     
     cout<<"please enter your address"<<endl;
-    cin>>detail->emailAddress;
+    detail->emailAddress = getEmailAddress();
     
     cout<<"please enter your phone number"<<endl;
-    cin>>detail->phoneNumber;
+    detail->phoneNumber = getPhoneNumber();
 
 }
