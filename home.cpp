@@ -16,28 +16,28 @@ cout<<"\t***##Welcome To Our Online Ticket Service##****\n"
 <<" Please note that currently only tickets from regoinal cities to Addis Abeba  are available \n"
 <<"--------------------------------------------------------------------------------------------\n";
 
-vector<passenger_detail> passengers;
+vector<passengerDetail> passengers;
 
 
     char response = 'y';
 
     while (response == 'y' || response == 'Y')
      {
-        passenger_detail passenger;
+        passengerDetail passenger;
 
-       travel_destinations(&passenger);
+      choose_destinations(&passenger);
 
-       take_in_detail(&passenger);
+       getPassengerDetail(&passenger);
 
       cout << "\nproceed to payment? (y/n): ";
       cin >> response;
-      if(respose == 'n' || response =='N')
+      if(response == 'n' || response =='N')
       {
          cout<<"\n*****Booking Cancelled******\n";
          return 1;
       }
 
-       payment(&passanger);
+       payment(&passenger);
        bool paymentSuccess = payment(&passenger);
         if (!paymentSuccess)
         {
@@ -45,7 +45,7 @@ vector<passenger_detail> passengers;
          return 1;
         }
 
-       generate_ticket_number(&passanger);
+       generate_ticket_number(&passenger);
 
        passengers.push_back(passenger); 
 

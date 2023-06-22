@@ -16,12 +16,11 @@ struct destinations
     //destination or arrival city
    int distance;
     //distance in km from the selected city to the capital city
-   int direction;
-    //direction of the selected city from the capital city
+  
 };
 
-/*this is a structure that contains passanges detail*/
-struct passanger_detail
+/*this is a structure that contains passengerDetail*/
+struct passengerDetail
 {
     string firstName;
     string middleName;
@@ -32,27 +31,26 @@ struct passanger_detail
     // destination or arrival city
     int distance;
     // distance in km from the selected city to the capital city
-    int direction;
-    // direction of the selected city from the capital city
+   
     Time boardingTime;
     int seatNumber;
     string ticketNumber;
 };
 
-void getPhoneNumber(passanger_detail* passenger);
+string getPhoneNumber( );
 
-void getEmailAddress(passanger_detail* passenger);
+string getEmailAddress();
 
-void get_departure_date(passanger_detail* passenger);
+void get_departure_date(passengerDetail* passenger);
 
-void choose_destinations(passanger_detail *passanger);
+void choose_destinations(passengerDetail *passenger);
 
-void getPassangerDetail(passanger_detail*passanger);
+void getPassengerDetail(passengerDetail*passenger);
 
-void print_ticket(const passanger_detail& passenger);
+void printTicket(const passengerDetail& passenger);
 //generates ticket number using the current time
-void generate_ticket_number(passanger_detail *passanger);
+void generate_ticket_number(passengerDetail *passenger);
 
 extern destinations destinationRecord[10];
 
-bool payment(passanger_detail* passenger);
+bool payment(passengerDetail* passenger);

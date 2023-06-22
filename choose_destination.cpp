@@ -5,7 +5,7 @@
 using namespace std;
 
 
-void choose_destinations(passanger_detail *passanger)
+void choose_destinations(passengerDetail *passanger)
 {
     string arrival;
     
@@ -20,7 +20,7 @@ void choose_destinations(passanger_detail *passanger)
         {
             passanger->city = destinationRecord[i].city;
             passanger->distance = destinationRecord[i].distance;
-            passanger->direction = destinationRecord[i].direction;
+            
 
             break;
         }

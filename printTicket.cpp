@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void print_ticket(const passenger_detail& passenger) {
+void printTicket(const passengerDetail &passenger) {
     cout << "Passenger Name: " << passenger.firstName << " " << passenger.lastName << endl;
     cout << "City: " << passenger.city << endl;
 

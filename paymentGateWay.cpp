@@ -3,7 +3,7 @@
 
 using namespace std ;
 
-bool payment(passenger_detail* passenger) 
+bool payment(passengerDetail* passenger) 
 {
     double ticketPrice = passenger->distance * 2.4;
 

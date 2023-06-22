@@ -9,7 +9,7 @@
 
 using namespace std;
 
- void getPhoneNumber(passenger_detail* passenger)
+ string getPhoneNumber()
     {
      
      string pnum;
@@ -27,10 +27,10 @@ using namespace std;
         return getPhoneNumber();
       } 
     }
-    passanger->phoneNumber = move(pnum);
+    return pnum;
     }
 
-void getEmailAddress(passenger_detail* passenger)
+string getEmailAddress()
 {
       string email;
       string target = "@gmail.com";
@@ -57,11 +57,16 @@ void getEmailAddress(passenger_detail* passenger)
           }
       
 
-      passanger->emailAddress = move(email);
+      return email;
 }
  
 
-void get_departure_date(passenger_detail* passenger) {
+#include <iostream>
+#include <chrono>
+
+using namespace std;
+
+void get_departure_date(passengerDetail* passenger) {
     // Set the specific date and time
     int year = 2023;
     int month;
@@ -70,39 +75,42 @@ void get_departure_date(passenger_detail* passenger) {
     int minute = 30;
     int second = 0;
 
+    // Get the current time
+    auto now = chrono::system_clock::now();
+    time_t currentTime = chrono::system_clock::to_time_t(now);
 
     // Obtain the current month
     tm* timeInfo = localtime(&currentTime);
     int currentMonth = timeInfo->tm_mon + 1; // tm_mon is zero-based, so add 1 to get the actual month
-    int currentDay = timeInfo->tm_mday ;
+    int currentDay = timeInfo->tm_mday;
 
-    do{
     bool invalidDate = false;
 
-    // Accept passenger input for the month and day
-    cout << "Enter month of departure ("<< currentMonth <<"-12): ";
-    cin >> month;
-    cout << "Enter day of departure: ";
-    cin >> day;
+    do {
+        // Accept passenger input for the month and day
+        cout << "Enter month of departure (" << currentMonth << "-12): ";
+        cin >> month;
+        cout << "Enter day of departure: ";
+        cin >> day;
 
-    // Check if the entered month is valid
-    if (month < currentMonth || day <= currentday)
-     {
-        cout << "Invalid month or date entered. month and day cannot be less than curent date." << endl;
-        invalidDate = true;
-    }
+        // Check if the entered month and day are valid
+        if (month < currentMonth || (month == currentMonth && day <= currentDay)) {
+            cout << "Invalid month or date entered. Month and day cannot be less than the current date." << endl;
+            invalidDate = true;
+        } else {
+            invalidDate = false;
+        }
     } while (invalidDate);
 
-    
     // Create a time_point based on the provided date and time
-        Time specificTime =
-        Time(chrono::seconds(0)) +
+    chrono::system_clock::time_point specificTime =
+        chrono::system_clock::time_point(chrono::seconds(0)) +
         chrono::hours(hour) +
         chrono::minutes(minute) +
         chrono::seconds(second) +
-        chrono::days(day - 1) +
-        chrono::months(month - 1) +
-        chrono::years(year - 1900);
+        chrono::hours(24 * (day - 1)) +
+        chrono::hours(24 * 30 * (month - 1)) +
+        chrono::hours(24 * 30 * 12 * (year - 1900));
 
     passenger->boardingTime = specificTime;
 }

@@ -9,7 +9,7 @@
 using namespace std ;
 
 
-void generate_ticket_number(passanger_detail *passanger) {
+void generate_ticket_number(passengerDetail *passanger) {
     // Get the current system time
     auto now = chrono::system_clock::now();
     auto time = chrono::system_clock::to_time_t(now);
