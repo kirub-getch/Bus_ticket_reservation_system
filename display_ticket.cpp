@@ -1,16 +1,19 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
+#include <ctime>
 #include "ticket.h"
 
 using namespace std;
 
-void display_detail(passanger_detail *p)
-{
-cout<<"here is your ticket\n";
-   cout<<"\n Name: "<<p->firstName + " " + p->lastName <<"\n";
-   cout<<"phone_number: "<< p->phoneNumber <<"\n";
-   cout<<"emailAddress: "<< p->emailAddress <<"\n";
+void print_ticket(const passenger_detail& passenger) {
+    cout << "Passenger Name: " << passenger.firstName << " " << passenger.lastName << endl;
+    cout << "City: " << passenger.city << endl;
 
-   cout << "destinations from " << p->city << " To Addis Abeba\n";
-   
+    auto time = chrono::system_clock::to_time_t(passenger.boardingTime);
+    cout << "Boarding Time: " << put_time(localtime(&time), "%Y-%b-%d %H:%M") << endl;
+
+    cout << "Seat Number: " << passenger.seatNumber << endl;
+    cout << "Ticket Number: " << passenger.ticketNumber << endl;
+    cout << endl;
 }

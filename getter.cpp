@@ -2,10 +2,14 @@
 #include <string>
 #include <cctype>
 #include "ticket.h"
+#include <utility>
+#include <chrono>
+#include <iomanip>
+
 
 using namespace std;
 
- string getPhoneNumber()
+ void getPhoneNumber(passenger_detail* passenger)
     {
      
      string pnum;
@@ -23,10 +27,10 @@ using namespace std;
         return getPhoneNumber();
       } 
     }
-    return pnum;
+    passanger->phoneNumber = move(pnum);
     }
 
-string getEmailAddress()
+void getEmailAddress(passenger_detail* passenger)
 {
       string email;
       string target = "@gmail.com";
@@ -53,6 +57,52 @@ string getEmailAddress()
           }
       
 
-      return email;
+      passanger->emailAddress = move(email);
 }
  
+
+void get_departure_date(passenger_detail* passenger) {
+    // Set the specific date and time
+    int year = 2023;
+    int month;
+    int day;
+    int hour = 12;
+    int minute = 30;
+    int second = 0;
+
+
+    // Obtain the current month
+    tm* timeInfo = localtime(&currentTime);
+    int currentMonth = timeInfo->tm_mon + 1; // tm_mon is zero-based, so add 1 to get the actual month
+    int currentDay = timeInfo->tm_mday ;
+
+    do{
+    bool invalidDate = false;
+
+    // Accept passenger input for the month and day
+    cout << "Enter month of departure ("<< currentMonth <<"-12): ";
+    cin >> month;
+    cout << "Enter day of departure: ";
+    cin >> day;
+
+    // Check if the entered month is valid
+    if (month < currentMonth || day <= currentday)
+     {
+        cout << "Invalid month or date entered. month and day cannot be less than curent date." << endl;
+        invalidDate = true;
+    }
+    } while (invalidDate);
+
+    
+    // Create a time_point based on the provided date and time
+        Time specificTime =
+        Time(chrono::seconds(0)) +
+        chrono::hours(hour) +
+        chrono::minutes(minute) +
+        chrono::seconds(second) +
+        chrono::days(day - 1) +
+        chrono::months(month - 1) +
+        chrono::years(year - 1900);
+
+    passenger->boardingTime = specificTime;
+}

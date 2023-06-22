@@ -2,13 +2,11 @@
 #include <iostream>
 #include <string.h>
 #include <stdlib.h>
+#include <chrono>
+#include <iomanip>
 
-#define yes 1
-#define no 0
-#define north 1
-#define south 2
-#define east 3
-#define west 4
+
+#define Time chrono::system_clock::time_point
 
 using namespace std;
 
@@ -26,6 +24,7 @@ struct destinations
 struct passanger_detail
 {
     string firstName;
+    string middleName;
     string lastName;
     string phoneNumber;
     string emailAddress;
@@ -35,16 +34,25 @@ struct passanger_detail
     // distance in km from the selected city to the capital city
     int direction;
     // direction of the selected city from the capital city
+    Time boardingTime;
+    int seatNumber;
+    string ticketNumber;
 };
 
-string getEmailAddress();
+void getPhoneNumber(passanger_detail* passenger);
 
-string getPhoneNumber();
+void getEmailAddress(passanger_detail* passenger);
 
-void travel_destinations(passanger_detail *);
+void get_departure_date(passanger_detail* passenger);
 
-void take_in_detail(passanger_detail *);
+void choose_destinations(passanger_detail *passanger);
 
-void display_detail(passanger_detail * );
+void getPassangerDetail(passanger_detail*passanger);
+
+void print_ticket(const passanger_detail& passenger);
+//generates ticket number using the current time
+void generate_ticket_number(passanger_detail *passanger);
 
 extern destinations destinationRecord[10];
+
+bool payment(passanger_detail* passenger);
