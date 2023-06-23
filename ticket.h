@@ -7,6 +7,8 @@
 
 
 #define Time chrono::system_clock::time_point
+#define true 1
+#define false 0
 
 using namespace std;
 
@@ -36,6 +38,7 @@ struct passengerDetail
     int seatNumber;
     string ticketNumber;
 };
+extern destinations destinationRecord[10];
 
 string getPhoneNumber( );
 
@@ -45,12 +48,11 @@ void get_departure_date(passengerDetail* passenger);
 
 void choose_destinations(passengerDetail *passenger);
 
-void getPassengerDetail(passengerDetail*passenger);
+void getPassengerDetail(passengerDetail *passenger);
 
 void printTicket(const passengerDetail& passenger);
 //generates ticket number using the current time
 void generate_ticket_number(passengerDetail *passenger);
 
-extern destinations destinationRecord[10];
 
 bool payment(passengerDetail* passenger);

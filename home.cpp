@@ -38,7 +38,9 @@ vector<passengerDetail> passengers;
       }
 
        payment(&passenger);
+
        bool paymentSuccess = payment(&passenger);
+       
         if (!paymentSuccess)
         {
          cout << "Payment was canceled. No ticket issued.\n";

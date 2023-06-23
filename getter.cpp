@@ -68,12 +68,10 @@ using namespace std;
 
 void get_departure_date(passengerDetail* passenger) {
     // Set the specific date and time
-    int year = 2023;
+    
     int month;
     int day;
-    int hour = 12;
-    int minute = 30;
-    int second = 0;
+    
 
     // Get the current time
     auto now = chrono::system_clock::now();
@@ -83,6 +81,8 @@ void get_departure_date(passengerDetail* passenger) {
     tm* timeInfo = localtime(&currentTime);
     int currentMonth = timeInfo->tm_mon + 1; // tm_mon is zero-based, so add 1 to get the actual month
     int currentDay = timeInfo->tm_mday;
+    int currentime = timeInfo->tm_hour;
+    int currentminutes = timeInfo->tm_min;
 
     bool invalidDate = false;
 
@@ -92,9 +92,10 @@ void get_departure_date(passengerDetail* passenger) {
         cin >> month;
         cout << "Enter day of departure: ";
         cin >> day;
+        cin.ignore();
 
         // Check if the entered month and day are valid
-        if (month < currentMonth || (month == currentMonth && day <= currentDay)) {
+        if (month < currentMonth || (month == currentMonth && day <= currentDay) || day > 30 || month > 12) {
             cout << "Invalid month or date entered. Month and day cannot be less than the current date." << endl;
             invalidDate = true;
         } else {
@@ -103,14 +104,13 @@ void get_departure_date(passengerDetail* passenger) {
     } while (invalidDate);
 
     // Create a time_point based on the provided date and time
-    chrono::system_clock::time_point specificTime =
-        chrono::system_clock::time_point(chrono::seconds(0)) +
-        chrono::hours(hour) +
-        chrono::minutes(minute) +
-        chrono::seconds(second) +
-        chrono::hours(24 * (day - 1)) +
-        chrono::hours(24 * 30 * (month - 1)) +
-        chrono::hours(24 * 30 * 12 * (year - 1900));
+    auto specificTime = now - chrono::hours(currentime)  + chrono::hours(12 + 24*(day - currentDay)) - chrono::minutes(currentminutes - 30) + chrono::hours(24*30*(month - currentMonth)) ;
+        
+
+        
+
+        auto time = chrono::system_clock::to_time_t(specificTime);
+        cout << "\nDeparture date : " << put_time(localtime(&time), "%Y-%b-%d %H:%M") << endl;
 
     passenger->boardingTime = specificTime;
 }

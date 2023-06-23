@@ -6,25 +6,29 @@ using namespace std;
 
 void getPassengerDetail(passengerDetail *passenger)
 {
-    cout<<"please fill in the detail of the passenger"<<endl;
+    cout<<"\n**PASSANGER DETAIL** \n"
+    <<"---------------------------"<<endl;
 
    
-    cin.ignore();
+   /// cin.ignore();
     
-    cout<<"enter first name:";
+    cout<<"Enter first name:";
     getline(cin ,passenger->firstName);
 
-    cout<<"enter middle name:";
+    cout<<"Enter middle name:";
      getline(cin ,passenger->middleName);
 
-     cout<<"enter last name:";
+     cout<<"Enter last name:";
     getline(cin ,passenger->lastName);
-    
+
+    cout<<"\n**CONTACTS**\n"
+    <<"---------------------------"<<endl;
+
     passenger->emailAddress = getEmailAddress();
     
-   passenger->phoneNumber = getPhoneNumber( );
+    passenger->phoneNumber = getPhoneNumber( );
 
-    get_departure_date(passenger);
+    
 
     
 
