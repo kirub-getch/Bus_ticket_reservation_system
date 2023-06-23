@@ -7,7 +7,9 @@ bool payment(passengerDetail* passenger)
 {
     int ticketPrice = (passenger->distance * 2.4);
         ticketPrice = ticketPrice - ticketPrice%50;
-   int termination = 1;
+    int termination = 1;
+
+
     while (termination)
      {
         cout << "Ticket Price: " << ticketPrice << endl;
