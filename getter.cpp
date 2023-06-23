@@ -76,6 +76,7 @@ void get_departure_date(passengerDetail* passenger) {
     int currentDay = timeInfo->tm_mday;
     int currentime = timeInfo->tm_hour;
     int currentminutes = timeInfo->tm_min;
+    int CTseconds = timeInfo->tm_sec;
 
     bool invalidDate = false;
 
@@ -97,7 +98,7 @@ void get_departure_date(passengerDetail* passenger) {
     } while (invalidDate);
 
     // Create a time_point based on the provided date and time
-    auto specificTime = now - chrono::hours(currentime)  + chrono::hours(12 + 24*(day - currentDay)) - chrono::minutes(currentminutes - 30) + chrono::hours(24*30*(month - currentMonth)) ;
+    auto specificTime = now - chrono::seconds(CTseconds)  - chrono::hours(currentime)  + chrono::hours(12 + 24*(day - currentDay)) - chrono::minutes(currentminutes - 30) + chrono::hours(24*30*(month - currentMonth)) ;
         
 
         
