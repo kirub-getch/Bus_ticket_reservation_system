@@ -29,7 +29,7 @@ void generate_ticket_number(passengerDetail *passanger) {
        {c = toupper(c);}
 
     // Combine the time string and random number to generate the ticket number
-     string Tno = cityId + timeString + to_string(randomNumber);
+     string Tno = cityId + timeString.substr(0,2) + to_string(randomNumber);
 
     if (Tno.length() > 8)
      {

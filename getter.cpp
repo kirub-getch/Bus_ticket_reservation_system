@@ -1,11 +1,4 @@
-#include <iostream>
-#include <string>
-#include <cctype>
 #include "ticket.h"
-#include <utility>
-#include <chrono>
-#include <iomanip>
-
 
 using namespace std;
 

@@ -12,50 +12,67 @@ int main()
 {
  
 
-cout<<"\t***##Welcome To Our Online Ticket Service##****\n"
-<<" Please note that currently only tickets from regoinal cities to Addis Abeba  are available \n"
-<<"--------------------------------------------------------------------------------------------\n";
+ cout<<"\t***##Welcome To Our Online Ticket Service##****\n"
+  <<" Please note that currently only tickets from regoinal cities to Addis Abeba  are available \n"
+  <<"--------------------------------------------------------------------------------------------\n";
 
-vector<passengerDetail> passengers;
+ vector<passengerDetail> passengers;
 
 
     char response = 'y';
+    static int choice;
 
-    while (response == 'y' || response == 'Y')
+    while (true)
      {
-        passengerDetail passenger;
+        
+        cout<<"1.Buy a ticket\n"
+            <<"2.Search for trip\n"
+            <<"3.exit\n"
+            <<"\nEnter choice :";
+         cin>>choice;
+         cin.ignore();
 
-      choose_destinations(&passenger);
+         switch(choice)
+         {
+            case 1:
+            {
+             cout << "BOOKING PASSANGER\n"
+                  <<"----------------------------\n";
+             bool result = bookTrip(passengers);
 
-       getPassengerDetail(&passenger);
+              if (!result)
+               {
+                  // Booking was cancelled
+                   return 0;
+               }
+                break;
+             }
+            
+            case 2:
+            {
+             cout << "SEARCH TRIP\n"
+                  <<"----------------------------\n";
+             string lastName, ticketNumber;
+              cout << "Enter last name: ";
+              cin >> lastName;
+              cout << "Enter ticket number: ";
+              cin >> ticketNumber;
 
-      cout << "\nproceed to payment? (y/n): ";
-      cin >> response;
-      if(response == 'n' || response =='N')
-      {
-         cout<<"\n*****Booking Cancelled******\n";
-         return 1;
-      }
+              searchPassenger(passengers, lastName, ticketNumber);
 
-       payment(&passenger);
+             break;
+            }
+            case 3:
+            {
+                return 1;
+            }
+            default:
+            {
+                cout<<"invalid choice\n";
+                return 1;
+            }
+         }
 
-       bool paymentSuccess = payment(&passenger);
-       
-        if (!paymentSuccess)
-        {
-         cout << "Payment was canceled. No ticket issued.\n";
-         return 1;
-        }
-
-       generate_ticket_number(&passenger);
-
-       passengers.push_back(passenger); 
-
-       
-
-        cout << "Do you want to book another trip? (y/n): ";
-        cin >> response;
-    }
-
+     }
 return 0;
 }

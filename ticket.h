@@ -1,10 +1,13 @@
 #pragma once
-#include <iostream>
-#include <string.h>
+
 #include <stdlib.h>
+#include <utility>
 #include <chrono>
 #include <iomanip>
-
+#include <iostream>
+#include <string>
+#include <cctype>
+#include <vector>
 
 #define Time chrono::system_clock::time_point
 #define true 1
@@ -54,5 +57,10 @@ void printTicket(const passengerDetail& passenger);
 //generates ticket number using the current time
 void generate_ticket_number(passengerDetail *passenger);
 
-
 bool payment(passengerDetail* passenger);
+
+void searchPassenger(vector<passengerDetail>& passengers, const string& lastName, const string& ticketNumber);
+
+void assignSeatNumber(passengerDetail& passenger, const vector<passengerDetail>& passengers);
+
+bool bookTrip(vector<passengerDetail>& passengers);
