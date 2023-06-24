@@ -1,4 +1,5 @@
 #!/bin/bash
 g++ -c *.cpp
-g++ -o a *.o
-./a 
+mv *.o object/
+g++ object/*.o -o bus
+./bus

@@ -26,7 +26,7 @@ bool bookTrip(vector<passengerDetail>& passengers)
     if (!paymentSuccess) {
         cout << "Payment was canceled. No ticket issued.\n";
         return false;
-    }*/
+    }
 
     assignSeatNumber(passenger , passengers);
 
